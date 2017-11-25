@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+
+	<nav class="navbar navbar-fixed-top">
+
+	<div class="content-padding">
+
+		<ul class="nav navbar-nav navbar-right">
+
+			<li><a href="/">Home</a></li>
+
+			<li class="dropdown">
+
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Movies <i class="fa fa-chevron-down"></i></a>
+				<ul class="dropdown-menu">
+          
+					<% @episodes.each do |e| %>
+						<li>
+							<%= link_to e.title, episode_path(e.id) %>
+						</li>
+					<% end %>
+
+        </ul> <!-- dropdown-menu -->
+
+			</li> <!-- dropdown -->
+
+		</ul> <!-- navbar-nav -->
+
+	</div>
+
+</nav>
+
+    <%= yield %>
+	<footer>
+
+		<div class="content-padding">
+			<div class="footer-content">
+
+				<p>Copyright &copy; 2017 Letlhogonolo Musi</p>
+
+				<div class="social-media-icons">
+					<a href="#"><i class="fa fa-empire"></i></a>
+					<a href="#"><i class="fa fa-rebel"></i></a>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</body>
+</html>
